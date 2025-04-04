@@ -65,6 +65,12 @@ section{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
+}
+
+.sec-head{
+    width: 100%;
+    
 }
 
 .state{
@@ -103,7 +109,7 @@ button.active:hover{
 .extensions{
     display: grid;
             gap: 15px;
-            width: 90%;
+            width: 100%;
             max-width: 1200px;
             margin: 20px auto;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -253,7 +259,7 @@ button.active:hover{
     }
 
     .sec-head{
-        width: 90%;
+     width: 90%;
         margin: auto;
         display:flex;
         justify-content: space-between;
@@ -306,13 +312,25 @@ button.active:hover{
     body{
         background: -webkit-linear-gradient(180deg,#EBF2FC 0%, #EEFBF9 100%);
     }
+    header{
+        background-color: var(--neutral-0);
+    }
 
     .sec-head h2{
         color:#04091B
     }
 
+    .theme-toggle img{
+        background-color: #c6c6c646;
+    }
+
     .extension{
         background-color: var(--neutral-0);
+        
+    }
+    .logosec h1{
+        color: #04091B;
+        margin-left: 10px;
     }
 
     .extension h3{
