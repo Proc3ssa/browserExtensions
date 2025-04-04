@@ -1,0 +1,340 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+
+
+:root{
+--neutral-900: #091540;
+--neutral-800: #202535;
+--neutral-300: #C6C6C6;
+--neutral-700: #2F364B;
+--red-400: rgba(242, 92, 84);
+--neutral-0: rgba(251, 253, 254);
+--neutral-600: #535868;
+}
+
+body{
+    margin: 10px;
+    background: linear-gradient(180deg, #04091B 0%, #091540 100%);
+    background-repeat: no-repeat;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+header{
+    width: 80%;
+    margin: 40px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--neutral-800);
+    border-radius: 20px;
+    padding-left: 12px;
+    padding-right: 12px;
+    
+}
+header h2{
+    color: white;
+    font-size:20px;
+}
+
+.logosec{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 160px;
+}
+
+.sec-head h2{
+    color: white;
+}
+
+.theme-toggle img{
+    background-color: var(--neutral-700);
+    width: 30px;
+    height: 30px;
+    border-radius: 12px;
+    padding: 5px;
+}
+
+section{
+    width: 80%;
+    margin: auto;
+}
+
+.sec-head, .state{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.state{
+    gap: 10px;
+}
+.state button, .bottom button{
+    border-radius: 99px;
+    border: 0.5px solid var(--neutral-300);
+    background-color: var(--neutral-700);
+    height: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+
+}
+
+button.active{
+    background-color: var(--red-400);
+    color: var(--neutral-900) ;
+    border-color: var(--red-400);
+    font-size: medium;
+}
+
+.state button:hover, .bottom .remove:hover{
+    background-color: var(--red-400);
+    color: var(--neutral-900) ;
+    border-color: var(--red-400);
+}
+
+button.active:hover{
+    border: 0.5px solid var(--neutral-300);
+    background-color: var(--neutral-700);
+    color: white;
+}
+
+.extensions{
+    display: grid;
+            gap: 15px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.extension{
+    /* height: 170px;
+    width: 29%;
+    border: 1px solid red;
+    background-color: var(--neutral-800);
+    border: 0.1px solid var(--neutral-300);
+    border-radius: 20px;
+    padding: 15px;
+    color: white; */
+
+    height: 170px;
+            border: 0.1px solid var(--neutral-300);
+            background-color: var(--neutral-800);
+            border-radius: 20px;
+            padding: 15px;
+            color: white;
+            
+            font-size: 18px;
+}
+
+.top{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-image{
+    width: 25%;
+}
+.top-text{
+    width: 75%;
+    height: 100px;
+    margin-top: -14px;
+}
+
+.top-text p{
+    margin-top: -10px;
+    font-size: 12px;
+}
+
+.bottom{
+    display: flex;
+    align-items: center;
+    height: 50%;
+    justify-content: space-between;
+
+}
+.bottom button{
+    height: 34px;
+    padding: auto;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Hide the default radio button */
+.toggle-container input {
+    display: none;
+}
+
+.bottom .remove:focus{
+    border: 1px solid var(--red-400);
+    outline: none;
+}
+
+/* Toggle switch appearance */
+.toggle-label {
+    width: 50px;
+    height: 25px;
+    background-color: rgb(83, 88, 104); /* OFF color */
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+/* The circle inside the toggle */
+.toggle-label::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%);
+    transition: 0.3s;
+}
+
+/* When radio is checked, change toggle color */
+.toggle-container input:checked + .toggle-label {
+    background-color: rgb(222, 72, 64); /* ON color */
+}
+
+/* Move the circle when checked */
+.toggle-container input:checked + .toggle-label::after {
+    left: 25px;
+}
+
+@media (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    }
+
+    body{
+        margin: 0;
+    }
+    header{
+        width: 80%;
+    }
+    .state{
+    }
+
+    .state button{
+        padding-inline: 30px;
+        height: 50px;
+    }
+
+    .sec-head h2{
+        text-align: center;
+        font-size: 30px;
+    }
+    .grid-container {
+        grid-template-columns: 1fr; /* 1 column */
+    }
+    section{
+        width: 95%;
+        margin: auto;
+    }
+
+    .sec-head{
+        width: 90%;
+        margin: auto;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+}
+
+@media (max-width: 767px) {
+    body{
+        margin: 0;
+    }
+    header{
+        width: 90%;
+    }
+    .state{
+        width: 85%;
+        margin: auto;
+    }
+
+    .state button{
+        padding-inline: 30px;
+    }
+
+    .sec-head h2{
+        text-align: center;
+        font-size: 40px;
+    }
+    .grid-container {
+        grid-template-columns: 1fr; /* 1 column */
+    }
+    section{
+        width: 95%;
+        margin: auto;
+    }
+
+    .sec-head{
+        display:block;
+    }
+   
+
+    
+}
+
+
+/* light theme  */
+
+@media (prefers-color-scheme: light) {
+    body{
+        background: -webkit-linear-gradient(180deg,#EBF2FC 0%, #EEFBF9 100%);
+    }
+
+    .sec-head h2{
+        color:#04091B
+    }
+
+    .extension{
+        background-color: var(--neutral-0);
+    }
+
+    .extension h3{
+        color: #04091B;
+    }
+    .extension p{
+        color: var(--neutral-700);
+    }
+
+    .extension .remove{
+        background-color: transparent;
+        color: #04091B;
+    }
+
+    .sec-head button{
+        background-color: var(--neutral-0);
+        color: #04091B;
+    }
+
+    button.active{
+        background-color: var(--red-400);
+    }
+
+
+}
